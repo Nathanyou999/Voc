@@ -3,7 +3,7 @@
 from configparser import RawConfigParser
 
 cfg=RawConfigParser()
-cfg.read(r"D:\\configuration\\configuration.ini")
+cfg.read(r"C:\\develpment\\VOC\\Backend_VOC\\configuration.ini")
 credential_cfg=dict(cfg.items("Database_voc"))
 
 # SQL Server数据库配置
