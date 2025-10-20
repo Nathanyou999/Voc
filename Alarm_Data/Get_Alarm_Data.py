@@ -202,7 +202,6 @@ def build_insert_alarm_query():
     return text("""
     INSERT INTO [ods_voc_script_Alarmdata_realtime] (
         [记录时间],
-
         -- === DB5 ===
         [急停报警],
         [压缩空气报警],
@@ -434,7 +433,6 @@ def main():
 
         # 读取报警
         alarms = read_alarm_values(plc)
-
         # 组装 SQL & 参数
         insert_alarm_query = build_insert_alarm_query()
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")

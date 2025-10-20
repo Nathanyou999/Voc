@@ -75,7 +75,7 @@ async def app_start():
     
     # 添加定时任务，每隔60秒执行一次获取PLC数据的任务
     scheduler.add_job(process_data_job, 'interval', minutes=1)
-    # scheduler.add_job(Get_Alarm_Data, 'interval', seconds=10)  # 每隔 10 秒执行一次获取 PLC 数据的任务
+    # scheduler.add_job(Get_Alarm_Data, 'interval', seconds=55)  # 每隔 10 秒执行一次获取 PLC 数据的任务
     # scheduler.add_job(Get_Running_Log_Data, 'interval', seconds=10)  # 每隔 10 秒执行一次获取 PLC 数据的任务
     
     # 启动调度器
