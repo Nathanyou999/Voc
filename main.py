@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
+from Alarm_Data import Get_Alarm_Data as alarm_module
 from typing import List, Optional
 app = FastAPI()
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -68,6 +69,7 @@ async def app_start():
                 print("连接到PLC成功！开始获取数据...")
                 # 调用函数获取数据
                 get_process_data(plc=plc)
+                alarm_module.main()
             else:
                 print("PLC连接失败，无法获取数据")
         except Exception as e:
