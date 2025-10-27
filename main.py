@@ -70,11 +70,11 @@ async def app_start():
                 print("连接到PLC成功！开始获取数据...")
                 # 调用函数获取数据
                 get_process_data(plc=plc)
-                print("DDDDD1")
+                print("过程数据完成")
                 log_module.get_log_data(plc=plc)
-                print("DDDDD2")
+                print("日志数据完成")
                 alarm_module.main()
-                print("进程结束")
+                print("警报日志完成")
 
             else:
                 print("PLC连接失败，无法获取数据")
