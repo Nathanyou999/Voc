@@ -73,7 +73,7 @@ def get_process_data(plc):
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         insert_query = text("""
-        INSERT INTO [ods_voc_script_Processdata_realtime_test] (
+        INSERT INTO [ods_voc_script_Processdata_realtime_1m] (
             [记录时间],
 
             -- === DB2（按PDF顺序/地址升序）===

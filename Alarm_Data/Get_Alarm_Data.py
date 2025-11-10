@@ -200,7 +200,7 @@ def build_insert_alarm_query():
     生成和 processdata 风格一致的 INSERT（按 PDF 顺序，剔除“备用”）
     """
     return text("""
-    INSERT INTO [ods_voc_script_Alarmdata_realtime] (
+    INSERT INTO [ods_voc_script_Alarmdata_realtime_1m] (
         [记录时间],
         -- === DB5 ===
         [急停报警],
@@ -418,7 +418,11 @@ def build_params(current_time, A):
         "A85_RotorInletPressureAbnormalAlarm_RotorFanFixedFrequencyRun"
     ]
     for k in keys:
-        p[k] = int(A.get(k, 0))
+        if k in A:
+            try:
+                p[k]=int(A[k])
+            except (ValueError,TypeError):
+                pass
     return p
 
 
@@ -454,7 +458,7 @@ def main():
     except Exception as e:
         print(f"读取/写入报警数据时发生错误：{e}")
     finally:
-        print("断开连接")
+        print("断开连接ok")
         try:
             plc.disconnect()
         except Exception:

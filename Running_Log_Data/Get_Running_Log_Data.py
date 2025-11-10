@@ -55,7 +55,7 @@ def read_log_values(plc):
 # ============ 2) INSERT 语句（与 alarm 的拼法一致） ============
 def build_insert_log_query():
     return text("""
-     INSERT INTO [ods_voc_script_Logdata_realtime] (
+     INSERT INTO [ods_voc_script_Logdata_realtime_1m] (
          [记录时间],
          [RTO系统运行], [RTO系统停机],
          [1#转轮系统运行], [1#转轮系统停机],
